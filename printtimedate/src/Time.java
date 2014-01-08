@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Time {
 	/**
@@ -6,13 +7,12 @@ public class Time {
 	 * @param args
 	 */
 	public static void main(String[] args){
+		String text;
 		Date date = new Date();
-		String ss;
+		SimpleDateFormat tool = new SimpleDateFormat();
 		
-		ss = date.toString();
-		System.out.print("Time: ");
-		System.out.print(ss);
-		System.out.print("\n");
-
+		tool.applyPattern("yyyy-MM-dd HH:mm:ss");
+		text = tool.format(date);
+		System.out.println(text);
 	}
 }
