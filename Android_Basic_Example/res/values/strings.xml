@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android Basic Test Example</string>
+    <string name="mesg_001">Message No.001: It works!</string>
+</resources>
