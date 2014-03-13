@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">当前日期时间测试</string>
-    <string name="btn_update">点我刷新日期时间值</string>
-</resources>
