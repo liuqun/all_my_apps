@@ -59,7 +59,7 @@ public class IoTest {
 				if (nRead <= 0) {
 					break;
 				}
-				s += new String(buf, 0, (int)nRead);
+				s += new String(buf, 0, nRead);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
