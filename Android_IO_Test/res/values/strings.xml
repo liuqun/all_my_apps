@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TXT file read/write Test</string>
+    <string name="hint1">Input your idea here</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TXT文件读写测试</string>
+	<string name="hint1">写下您此刻心中所思所想</string>
+</resources>
