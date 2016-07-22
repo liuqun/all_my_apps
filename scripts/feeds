@@ -17,16 +17,18 @@ my $mk=`which gmake 2>/dev/null`;	# select the right 'make' program
 chomp($mk);		# trim trailing newline
 $mk or $mk = "make";	# default to 'make'
 
-# check version of make
-my @mkver = split /\s+/, `$mk -v`, 4;
-my $valid_mk = 1;
-$mkver[0] =~ /^GNU/ or $valid_mk = 0;
-$mkver[1] =~ /^Make/ or $valid_mk = 0;
-
-my ($mkv1, $mkv2) = split /\./, $mkver[2];
-($mkv1 >= 4 || ($mkv1 == 3 && $mkv2 >= 81)) or $valid_mk = 0;
-
-$valid_mk or die "Unsupported version of make found: $mk\n";
+# MODIFIED by liuqun because we do not need make here
+# ---------------------------------------------------
+# # check version of make
+# my @mkver = split /\s+/, `$mk -v`, 4;
+# my $valid_mk = 1;
+# $mkver[0] =~ /^GNU/ or $valid_mk = 0;
+# $mkver[1] =~ /^Make/ or $valid_mk = 0;
+#
+# my ($mkv1, $mkv2) = split /\./, $mkver[2];
+# ($mkv1 >= 4 || ($mkv1 == 3 && $mkv2 >= 81)) or $valid_mk = 0;
+#
+# $valid_mk or die "Unsupported version of make found: $mk\n";
 
 my @feeds;
 my %build_packages;
@@ -686,11 +688,12 @@ sub update_feed($$$$)
 			return 1;
 		};
 	};
-	warn "Create index file './feeds/$name.index' \n";
-	update_index($name) == 0 or do {
-		warn "failed.\n";
-		return 1;
-	};
+	# MODIFIED by liuqun to disable OpenWRT package index update
+	#warn "Create index file './feeds/$name.index' \n";
+	#update_index($name) == 0 or do {
+	#	warn "failed.\n";
+	#	return 1;
+	#};
 	return 0;
 }
 
